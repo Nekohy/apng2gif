@@ -1,8 +1,8 @@
 package main
 
 import (
+	"apng2gif"
 	"flag"
-	"line2tg/apng2gif"
 	"log"
 	"os"
 )

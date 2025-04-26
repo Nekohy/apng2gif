@@ -2,6 +2,7 @@
 package apng2gif
 
 import (
+	"fmt"
 	"github.com/kettek/apng"
 	"image"
 	"image/color"
@@ -9,7 +10,6 @@ import (
 	"image/draw"
 	"image/gif"
 	"io"
-	"line2tg/utils"
 	"math"
 )
 
@@ -20,7 +20,7 @@ func Convert(r io.Reader, w io.Writer) error {
 		return err
 	}
 	if len(anim.Frames) < 2 {
-		return utils.IsNormalPNG
+		return fmt.Errorf("it is a normal PNG")
 	}
 
 	// 计算整幅画布大小

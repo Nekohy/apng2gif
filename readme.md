@@ -1,5 +1,6 @@
 # apng2gif
 A pure golang tool for converting APNG to GIF
+
 Just 118 lines of code.
 # Usage
 ```console
@@ -15,18 +16,12 @@ import (
 )
 
 func main() {
-	in, err := os.Open(inPath)
-	if err != nil {
-		return err
-	}
+	in, _ := os.Open(inPath)
 	defer func(in *os.File) {
 		_ = in.Close()
 	}(in)
 
-	out, err := os.Create(outPath)
-	if err != nil {
-		return err
-	}
+	out, _ := os.Create(outPath)
 	defer func(out *os.File) {
 		_ = out.Close()
 	}(out)
